@@ -4,7 +4,7 @@
 
 Vagrant.configure("2") do |config|
 
-# Virtual Machine 1 Settings
+# Virtual Machine 1 Configurations
   config.vm.define "Ubuntu-bionic64-vm" do |vm1|
     vm1.vm.hostname = "Ubuntu-bionic64-vm"
     vm1.vm.box = "ubuntu/bionic64"
@@ -24,11 +24,11 @@ Vagrant.configure("2") do |config|
    SHELL
 
    vm1.vm.provision "shell", run: "always", inline: <<-SHELL
-     echo "Hello from Ubuntu VM machine"
+     echo "The Ubuntu VM is now running successfully"
    SHELL
   end
 
-# Virtual Machine 2  Settings
+# Virtual Machine 2  Configurations
   config.vm.define "Centos-7-vm" do |vm2|
     vm2.vm.hostname = "Centos-7-vm"
     vm2.vm.box = "centos/7"
@@ -40,7 +40,7 @@ Vagrant.configure("2") do |config|
   end
 
    vm2.vm.provision "shell", run: "always", inline: <<-SHELL
-     echo "Hello from Centos VM machine"
+     echo "The Centos  VM is also  running successfully"
    SHELL
   end
 end
