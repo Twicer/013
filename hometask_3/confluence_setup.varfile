@@ -1,0 +1,8 @@
+app.install.service$Boolean=true
+portChoice=custom
+httpPort$Long=8090
+rmiPort$Long=8000
+launch.application$Boolean=true
+sys.adminRights$Boolean=true
+sys.confirmedUpdateInstallationString=false
+sys.languageId=en

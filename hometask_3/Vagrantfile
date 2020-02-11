@@ -1,0 +1,32 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+# Virtual Machine Configurations
+     config.vm.box = "ubuntu/bionic64"
+     config.vm.boot_timeout=18000
+    # config.vm.network "private_network", ip: "192.168.50.4"
+     config.vm.network "forwarded_port", guest: 8090, host: 8080, host_ip: "127.0.0.1"
+     config.vm.network "forwarded_port", guest: 3306, host: 3306, host_ip: "127.0.0.1"
+     config.vm.synced_folder ".", "/home/vagrant"
+
+
+#    Provision scripts
+     config.vm.provision :shell do |mysql|
+	mysql.name = "Mysql installation"
+	mysql.path = "mysql_setup.sh"
+     end
+
+     config.vm.provision :shell do |confluence|
+	confluence.name = "Confluence installation"
+	confluence.path = "confluence_setup.sh"
+     end
+
+#   Provider Settings
+    config.vm.provider "virtualbox" do |vb|
+       vb.name = "Ubuntu-vm"
+       vb.gui = false
+       vb.memory = "2048"
+    end
+ end
+
