@@ -1,0 +1,14 @@
+FROM mysql:8
+
+MAINTAINER  grace.goma88@gmail.com
+
+ENV MYSQL_ROOT_PASSWORD=123456
+
+ENV MYSQL_DATABASE=wordpress_db
+
+ENV MYSQL_USER=wordpress_admin
+
+ENV MYSQL_PASSWORD=admin123456
+
+EXPOSE 3306
+
